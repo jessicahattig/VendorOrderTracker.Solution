@@ -6,13 +6,15 @@ namespace VendorOrderTracker.Models
   {
     public string Description { get; set; }
     public int Id { get; }
+    public decimal Price { get; set; }
     private static List<Order> _instances = new List<Order> { };
 
-  public Order(string description)
+  public Order(string description, decimal price)
     {
       Description = description;
       _instances.Add(this);
       Id = _instances.Count;
+      Price = price;
     }
 
   public static List<Order> GetAll()

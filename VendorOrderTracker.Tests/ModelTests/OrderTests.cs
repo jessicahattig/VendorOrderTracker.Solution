@@ -65,7 +65,7 @@ namespace VendorOrderTracker
       CollectionAssert.AreEqual(newList, result);
     }
 
-        [TestMethod]
+    [TestMethod]
     public void Find_ReturnsCorrectOrder_Order()
     {
       //Arrange
@@ -79,6 +79,22 @@ namespace VendorOrderTracker
 
       //Assert
       Assert.AreEqual(newOrder2, result);
+    }
+
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_Decimal()
+    {
+    // Arrange
+    decimal expectedPrice = 10.99M;
+    string description = "2 pastries";
+    
+
+    // Act
+    Order result = new Order(description, expectedPrice); 
+
+    // Assert
+    decimal actualPrice = result.Price;
+    Assert.AreEqual(expectedPrice, actualPrice);
     }
   }
 }
