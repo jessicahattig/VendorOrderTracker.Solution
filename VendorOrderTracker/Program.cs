@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ToDoList
+namespace VendorOrderTracker
 {
   class Program
   {
@@ -14,7 +14,7 @@ namespace ToDoList
       WebApplication app = builder.Build();
 
       app.UseHttpsRedirection();
-      app.UseStaticFiles();
+      // app.UseStaticFiles();
       app.UseRouting();
 
       app.MapControllerRoute(
