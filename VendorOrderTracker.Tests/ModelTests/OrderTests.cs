@@ -64,5 +64,21 @@ namespace VendorOrderTracker
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+        [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      //Arrange
+      string description01 = "3 loafs of bread";
+      string description02 = "2 pastries";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
