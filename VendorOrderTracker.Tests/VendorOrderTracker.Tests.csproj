@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ToDoList\ToDoList.csproj" />  
+    <ProjectReference Include="..\VendorOrderTracker\VendorOrderTracker.csproj" />  
   </ItemGroup>
 
 </Project>
