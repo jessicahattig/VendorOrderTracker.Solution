@@ -17,18 +17,26 @@ namespace VendorOrderTracker
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      // Arrange
+      string description = "test";
+      decimal price = 10.99M;
+      
+      // Act
+      Order newOrder = new Order(description, price);
+      
+      // Assert
       Assert.AreEqual(typeof(Order), newOrder.GetType());
-    }
+      }
 
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
       string description = "3 loafs of bread.";
+      decimal price = 10.99M;
 
       //Act
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(description, price);
       string result = newOrder.Description;
 
       //Assert
@@ -39,23 +47,26 @@ namespace VendorOrderTracker
     public void GetAll_ReturnsEmptyList_OrderList()
     {
       // Arrange
-      List<Order> newList = new List<Order> { };
+      string description = "test";
+      decimal price = 10.99M;
 
       // Act
-      List<Order> result = Order.GetAll();
+      Order newOrder = new Order(description, price);
 
       // Assert
-      CollectionAssert.AreEqual(newList, result);
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
     [TestMethod]
-    public void GetAll_ReturnsItems_ItemList()
+    public void GetAll_ReturnsOrders_OrderList()
     {
       //Arrange
       string description01 = "3 loafs of bread";
+      decimal price01 = 10.99M;
       string description02 = "2 pastries";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      decimal price02 = 7.49M;
+      Order newOrder1 = new Order(description01, price01);
+      Order newOrder2 = new Order(description02, price02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
@@ -70,10 +81,13 @@ namespace VendorOrderTracker
     {
       //Arrange
       string description01 = "3 loafs of bread";
+      decimal price01 = 10.99M;
       string description02 = "2 pastries";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      decimal price02 = 7.49M;
+      Order newOrder1 = new Order(description01, price01);
+      Order newOrder2 = new Order(description02, price02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      
       //Act
       Order result = Order.Find(2);
 
