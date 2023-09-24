@@ -87,7 +87,8 @@ namespace VendorOrderTracker
       //Arrange
       string description = "3 loafs of bread.";
       decimal price = 10.99M;
-      Order newOrder = new Order(description, price);
+      DateTime orderDate = DateTime.Now;
+      Order newOrder = new Order(description, price, orderDate);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Suzie's Cafe";
       Vendor newVendor = new Vendor(name);

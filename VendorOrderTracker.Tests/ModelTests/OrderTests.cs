@@ -20,9 +20,10 @@ namespace VendorOrderTracker
       // Arrange
       string description = "test";
       decimal price = 10.99M;
+      DateTime orderDate = DateTime.Now;
       
       // Act
-      Order newOrder = new Order(description, price);
+      Order newOrder = new Order(description, price, orderDate);
       
       // Assert
       Assert.AreEqual(typeof(Order), newOrder.GetType());
@@ -34,9 +35,10 @@ namespace VendorOrderTracker
       //Arrange
       string description = "3 loafs of bread.";
       decimal price = 10.99M;
+      DateTime orderDate = DateTime.Now;
 
       //Act
-      Order newOrder = new Order(description, price);
+      Order newOrder = new Order(description, price, orderDate);
       string result = newOrder.Description;
 
       //Assert
@@ -49,9 +51,10 @@ namespace VendorOrderTracker
       // Arrange
       string description = "test";
       decimal price = 10.99M;
+      DateTime orderDate = DateTime.Now;
 
       // Act
-      Order newOrder = new Order(description, price);
+      Order newOrder = new Order(description, price, orderDate);
 
       // Assert
       Assert.AreEqual(typeof(Order), newOrder.GetType());
@@ -63,10 +66,12 @@ namespace VendorOrderTracker
       //Arrange
       string description01 = "3 loafs of bread";
       decimal price01 = 10.99M;
+      DateTime orderDate01 = DateTime.Now;
       string description02 = "2 pastries";
       decimal price02 = 7.49M;
-      Order newOrder1 = new Order(description01, price01);
-      Order newOrder2 = new Order(description02, price02);
+      DateTime orderDate02 = DateTime.Now;
+      Order newOrder1 = new Order(description01, price01, orderDate01);
+      Order newOrder2 = new Order(description02, price02, orderDate02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
@@ -82,10 +87,12 @@ namespace VendorOrderTracker
       //Arrange
       string description01 = "3 loafs of bread";
       decimal price01 = 10.99M;
+      DateTime orderDate01 = DateTime.Now;
       string description02 = "2 pastries";
       decimal price02 = 7.49M;
-      Order newOrder1 = new Order(description01, price01);
-      Order newOrder2 = new Order(description02, price02);
+      DateTime orderDate02 = DateTime.Now;
+      Order newOrder1 = new Order(description01, price01, orderDate01);
+      Order newOrder2 = new Order(description02, price02, orderDate02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
       
       //Act
@@ -101,14 +108,31 @@ namespace VendorOrderTracker
     // Arrange
     decimal expectedPrice = 10.99M;
     string description = "2 pastries";
+    DateTime orderDate = DateTime.Now;
     
 
     // Act
-    Order result = new Order(description, expectedPrice); 
+    Order result = new Order(description, expectedPrice, orderDate); 
 
     // Assert
     decimal actualPrice = result.Price;
     Assert.AreEqual(expectedPrice, actualPrice);
     }
+
+    [TestMethod]
+    public void GetOrderDate_ReturnsOrderDate_DateTime()
+    {
+      // Arrange
+      string description = "2 pastries";
+      decimal price = 10.99M;
+      DateTime orderDate = DateTime.Now;
+      
+      // Act
+      Order result = new Order(description, price, orderDate);
+
+      // Assert
+      DateTime actualOrderDate = result.OrderDate;
+      Assert.AreEqual(orderDate, actualOrderDate);
+      }
   }
 }
