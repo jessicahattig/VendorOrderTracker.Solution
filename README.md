@@ -1,4 +1,4 @@
-# _Pierre's Bakery Vendor Order Tracking Application_
+# _Pierre's Vendor Order Tracking Application_
 
 #### By _**Jessica Hattig**_
 
