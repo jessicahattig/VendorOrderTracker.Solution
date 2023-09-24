@@ -6,7 +6,17 @@
 
 <form action="/vendors/@Model.Id/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+<div class="form-group">
   <label for="orderDescription">Order Description</label>
   <input id="orderDescription" name="orderDescription" type="text">
+</div>
+<div class = "form-group">
+<label for="orderDate">Date order was placed:</label>
+<input type="datetime-local" id="orderDate" name="orderDate" required>
+</div>
+<div class="form-group">
+    <label for="orderPrice">Price:</label>
+  <input type="number" step="0.01" class="form-control" id="orderPrice" name="orderPrice" required>
+</div>
   <button type='submit'>Add Order</button>
 </form>
