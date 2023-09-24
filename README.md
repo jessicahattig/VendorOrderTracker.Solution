@@ -29,6 +29,7 @@ _This C# MVC application is designed to streamline vendor and order management f
 1. Clone this repository.
 2. Open your terminal (e.g., Terminal or GitBash) and navigate to this project's production directory called "VendorOrderTracker".
 3. Run `dotnet watch run` in the command line to start the project in development mode with a watcher.
+4. Open the browser to https://localhost:5000.
 
 ## How to Run Tests
 
